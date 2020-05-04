@@ -13,15 +13,15 @@ import java.net.URI;
 
 @Component
 public class MyServerAuthenticationSuccessHandler implements ServerAuthenticationSuccessHandler {
-    private ServerRedirectStrategy redirectStrategy = new DefaultServerRedirectStrategy();
+  private ServerRedirectStrategy redirectStrategy = new DefaultServerRedirectStrategy();
 
-    @Value("${application.frontend_url}")
-    private String DEFAULT_LOGIN_SUCCESS_URL;
+  @Value("${application.frontend_url}")
+  private String DEFAULT_LOGIN_SUCCESS_URL;
 
-    @Override
-    public Mono<Void> onAuthenticationSuccess(WebFilterExchange webFilterExchange, Authentication authentication) {
-        URI url = URI.create(DEFAULT_LOGIN_SUCCESS_URL);
-        return this.redirectStrategy
-                .sendRedirect(webFilterExchange.getExchange(), url);
-    }
+  @Override
+  public Mono<Void> onAuthenticationSuccess(
+      WebFilterExchange webFilterExchange, Authentication authentication) {
+    URI url = URI.create(DEFAULT_LOGIN_SUCCESS_URL);
+    return this.redirectStrategy.sendRedirect(webFilterExchange.getExchange(), url);
+  }
 }

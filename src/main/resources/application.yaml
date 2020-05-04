@@ -4,11 +4,13 @@ server:
 logging:
   level:
     root: INFO
+    reactor:
+      netty: INFO
     org.springframework.web: INFO
     org.springframework.web.HttpLogging: DEBUG
-    org.springframework.security: DEBUG
-    org.springframework.security.oauth2: DEBUG
-    org.springframework.cloud.gateway: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.cloud.gateway: TRACE
 
 application:
   frontend_url: http://localhost:3000
@@ -27,13 +29,17 @@ spring:
             # scope: openid,profile,offline_access,email,resource.read,roles
   cloud:
     gateway:
+      httpclient:
+        wiretap: true
+      httpserver:
+        wiretap: true
       routes:
         - id: core
           uri: http://localhost:8260
           predicates:
             - Path=/**
           filters:
-#            - TokenRelay
+            # - TokenRelay
             - TokenRelayWithTokenRefresh
             - RemoveRequestHeader=Cookie, Set-Cookie
 
