@@ -47,7 +47,6 @@ public class SecurityConfig {
         new DelegatingServerAuthenticationEntryPoint.DelegateEntry(
             ServerWebExchangeMatchers.pathMatchers("/**"),
             new HttpStatusServerEntryPoint(HttpStatus.UNAUTHORIZED)));
-
     DelegatingServerAuthenticationEntryPoint nonAjaxLoginEntryPoint =
         new DelegatingServerAuthenticationEntryPoint(entryPoints);
 
@@ -59,12 +58,10 @@ public class SecurityConfig {
                 new OidcClientInitiatedServerLogoutSuccessHandler(clientRegistrationRepository)));
     http.logout().logoutUrl("/auth/logout");
 
-    http.authorizeExchange().anyExchange().authenticated();
-
     http.exceptionHandling().authenticationEntryPoint(nonAjaxLoginEntryPoint);
 
-    http.headers().frameOptions().disable().xssProtection().disable();
-    http.cors();
+    http.authorizeExchange().anyExchange().authenticated();
+
     http.csrf().disable();
     http.httpBasic().disable();
     http.formLogin().disable();

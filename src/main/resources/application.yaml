@@ -39,7 +39,7 @@ spring:
           predicates:
             - Path=/**
           filters:
-            # - TokenRelay
-            - TokenRelayWithTokenRefresh
+            - TokenRelay
+            # - TokenRelayWithTokenRefresh
             - RemoveRequestHeader=Cookie, Set-Cookie
 
