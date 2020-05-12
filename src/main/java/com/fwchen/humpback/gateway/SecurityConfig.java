@@ -21,7 +21,7 @@ import java.util.List;
 public class SecurityConfig {
 
   private final MyServerAuthenticationSuccessHandler myServerAuthenticationSuccessHandler;
-  @Value("${application.frontend_url}")
+  @Value("${application.frontend-url}")
   private String frontendUrl;
 
   public SecurityConfig(MyServerAuthenticationSuccessHandler myServerAuthenticationSuccessHandler) {

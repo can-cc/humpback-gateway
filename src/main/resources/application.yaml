@@ -7,13 +7,13 @@ logging:
     reactor:
       netty: INFO
     org.springframework.web: INFO
-    org.springframework.web.HttpLogging: DEBUG
-    org.springframework.security: TRACE
-    org.springframework.security.oauth2: TRACE
-    org.springframework.cloud.gateway: TRACE
+    org.springframework.web.HttpLogging: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+    org.springframework.cloud.gateway: INFO
 
 application:
-  frontend_url: http://localhost:3000
+  frontend-url: http://localhost:3000
 
 spring:
   security:

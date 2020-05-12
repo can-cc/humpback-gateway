@@ -15,7 +15,7 @@ import java.net.URI;
 public class MyServerAuthenticationSuccessHandler implements ServerAuthenticationSuccessHandler {
   private ServerRedirectStrategy redirectStrategy = new DefaultServerRedirectStrategy();
 
-  @Value("${application.frontend_url}")
+  @Value("${application.frontend-url}")
   private String DEFAULT_LOGIN_SUCCESS_URL;
 
   @Override
