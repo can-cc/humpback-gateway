@@ -36,7 +36,7 @@ spring:
         wiretap: true
       routes:
         - id: core
-          uri: ${applicaton.core-url}
+          uri: ${application.core-url}
           predicates:
             - Path=/**
           filters:
