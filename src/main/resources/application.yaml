@@ -21,11 +21,11 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://192.168.50.251:6180/auth/realms/humpback_dev
+            issuer-uri: http://keylocak:007/auth/realms/humpback_dev
         registration:
           keycloak:
             client-id: humpback-gateway
-            client-secret: a1246398-4c2f-46bd-b83d-9b1313f3378d
+            client-secret: keycloak-secret
             # scope: openid,profile,offline_access,email,resource.read,roles
   cloud:
     gateway:
