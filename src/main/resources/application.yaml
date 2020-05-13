@@ -14,6 +14,7 @@ logging:
 
 application:
   frontend-url: http://localhost:3000
+  core-url: http://localhost:8260
 
 spring:
   security:
@@ -35,7 +36,7 @@ spring:
         wiretap: true
       routes:
         - id: core
-          uri: http://localhost:8260
+          uri: ${applicaton.core-url}
           predicates:
             - Path=/**
           filters:
