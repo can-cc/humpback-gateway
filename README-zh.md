@@ -1,3 +1,10 @@
 # Humpback Gateway
 
 ## [文档](./docs/docs_zh.md)
+
+## 启动
+``` bash
+SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_KEYCLOAK_ISSUER-URI=http://lcoalhost:8080/auth/realms/humpback_dev
+SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KEYCLOAK_CLIENT-ID=humpback-gateway
+SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KEYCLOAK_CLIENT-SECRET=***
+```            
